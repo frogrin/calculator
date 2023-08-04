@@ -15,6 +15,23 @@ function divide(firstNumber, secondNumber) {
   return firstNumber / secondNumber;
 }
 
-let firstNumber = 3;
+let firstNumber = 320;
 let secondNumber = 2;
-let operator = '+';
+let operator = '/';
+
+function operate(operator, firstNumber, secondNumber) {
+  switch (operator) {
+    case '+':
+      return add(firstNumber, secondNumber);
+      break;
+    case '-':
+      return subtract(firstNumber, secondNumber);
+      break;
+    case '*': 
+      return multiply(firstNumber, secondNumber);
+      break;
+    case '/':
+      return divide(firstNumber, secondNumber);
+      break;
+  }
+}
