@@ -47,3 +47,11 @@ body {
 #equals {
   flex: 2;
 }
+
+.display {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 6px 8px;
+}
