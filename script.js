@@ -86,6 +86,7 @@ equals.addEventListener('click', () => {
   currentNumber = result;
   firstNumber = currentNumber;
   secondNumber = 0;
+  operator = '';
 });
 
 // Add event listener to clear button
@@ -94,6 +95,6 @@ clearButton.addEventListener('click', () => {
   display.textContent = '';
   currentNumber = '';
   firstNumber = 0;
-  seconNumber = 0;
+  secondNumber = 0;
   operator = '';
 });
