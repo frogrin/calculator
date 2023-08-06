@@ -60,10 +60,19 @@ const operators = document.querySelectorAll('.operators button');
 for (const opr of operators) {
   if (opr.textContent === 'C') continue;
   opr.addEventListener('click', () => {
-  operator = opr.textContent;
-  updateDisplay(` ${operator} `);
-  firstNumber = Number(currentNumber);
-  currentNumber = '';
+    // Is operator already exist then do the calculation and save it to the first number
+    if (operator !== '') {
+      secondNumber = Number(currentNumber);
+      firstNumber = operate(operator, firstNumber, secondNumber);
+      operator = opr.textContent;
+      updateDisplay(` ${operator} `);
+      currentNumber = '';
+    } else {
+      operator = opr.textContent;
+      updateDisplay(` ${operator} `);
+      firstNumber = Number(currentNumber);
+      currentNumber = '';
+    }
   });
 
 }
@@ -86,4 +95,5 @@ clearButton.addEventListener('click', () => {
   currentNumber = '';
   firstNumber = 0;
   seconNumber = 0;
+  operator = '';
 });
