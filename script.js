@@ -36,13 +36,11 @@ function operate(operator, firstNumber, secondNumber) {
 }
 
 const display = document.querySelector('.display');
-let displayValue = '';
-display.textContent = displayValue;
+display.textContent = '';
 let currentNumber = '';
 
 function updateDisplay(value) {
-  displayValue += value;
-  display.textContent = displayValue;
+  display.textContent += value;
 }
 
 // Add event listeners to number buttons
@@ -74,5 +72,18 @@ for (const opr of operators) {
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', () => {
   secondNumber = Number(currentNumber);
-  display.textContent = operate(operator, firstNumber, secondNumber);
+  let result = operate(operator, firstNumber, secondNumber);
+  display.textContent = result;
+  currentNumber = result;
+  firstNumber = currentNumber;
+  secondNumber = 0;
+});
+
+// Add event listener to clear button
+const clearButton = document.querySelector('#clear');
+clearButton.addEventListener('click', () => {
+  display.textContent = '';
+  currentNumber = '';
+  firstNumber = 0;
+  seconNumber = 0;
 });
